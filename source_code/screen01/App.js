@@ -1,7 +1,6 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import ChatItem from "./components/Chat";
 import Header from "./components/header";
-import { Text } from "react-native-web";
 import Footer from "./components/footer";
 
 const productList = [
@@ -48,18 +47,11 @@ export default function App() {
             <Header />
             <View style={styles.body}>
                 <View style={styles.body.title}>
-                    <Text>
-                        Bạn có thắc mắc với sản phẩm vừa xem. Đừng ngại chat với
-                        shop
-                    </Text>
+                    <Text>Bạn có thắc mắc với sản phẩm vừa xem. Đừng ngại chat với shop</Text>
                 </View>
                 <View>
                     {productList.map((product) => (
-                        <ChatItem
-                            image={product.image}
-                            shopName={product.shopName}
-                            title={product.title}
-                        />
+                        <ChatItem image={product.image} shopName={product.shopName} title={product.title} />
                     ))}
                 </View>
             </View>
@@ -70,6 +62,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
     body: {
+        flex: 1,
         marginTop: "60px",
         title: {
             height: "60px",
